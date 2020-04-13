@@ -7,10 +7,12 @@ namespace BankEncapsulation
         static void Main(string[] args)
         {
             var account = new BankAccount();
-            var amount = 300;
-            account.Deposit(amount);
+            Console.WriteLine("How much is your deposit?");
+            var amountToDeposit = double.Parse(Console.ReadLine());
+
+            account.Deposit(amountToDeposit);
             account.GetBalance();
-            Console.WriteLine($"Balance = {account.GetBalance()}");
+            Console.WriteLine($"Thank you! Your balance is now ${account.GetBalance()}");
         }
     }
 }
