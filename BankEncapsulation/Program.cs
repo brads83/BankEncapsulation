@@ -13,6 +13,11 @@ namespace BankEncapsulation
             account.Deposit(amountToDeposit);
             account.GetBalance();
             Console.WriteLine($"Thank you! Your balance is now ${account.GetBalance()}");
+
+            var instance = new PersonalInformation();
+            Console.WriteLine("Please enter your phone number");
+            instance.NumberFormatted = Console.ReadLine();
+            Console.WriteLine(instance.NumberFormatted);
         }
     }
 }
