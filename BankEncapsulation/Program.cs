@@ -15,9 +15,21 @@ namespace BankEncapsulation
             Console.WriteLine($"Thank you! Your balance is now ${account.GetBalance()}");
 
             var instance = new PersonalInformation();
-            Console.WriteLine("Please enter your phone number");
-            instance.NumberFormatted = Console.ReadLine();
+            string number;
+            long result;
+
+            do
+            {
+                Console.WriteLine("Please enter your phone number, area code first");
+                number = Console.ReadLine();
+            } while (number.Length != 10 || !long.TryParse(number, out result));
+
+            instance.NumberFormatted = number;
             Console.WriteLine(instance.NumberFormatted);
+
+            /*Console.WriteLine("Please enter your phone number, area code first");
+            instance.NumberFormatted = Console.ReadLine();
+            Console.WriteLine(instance.NumberFormatted);*/
         }
     }
 }
